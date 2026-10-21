@@ -10,7 +10,7 @@ version = "0.3.0"
 edition = "2024"
 authors = ["Valeriy Sakharov <valeratrades@gmail.com>"]
 license = "BlueOak-1.0.0"
-repository = "https://github.com/EV-invest/exec_viz"
+repository = "https://github.com/EV-Main/exec_viz"
 keywords = ["dag", "visualization", "replay", "trading", "debugging"]
 categories = ["visualization", "development-tools::debugging", "finance"]
 
@@ -26,6 +26,9 @@ manual_is_multiple_of = "allow"
 
 [workspace.lints.rust]
 unused_features = "allow"
+
+[workspace.lints.cargo]
+non_kebab_case_bins = "allow"
 
 [workspace.dependencies]
 ahash = { version = "0.8", features = ["serde"] }
