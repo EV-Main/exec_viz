@@ -83,7 +83,7 @@ html, body, #main {
   color: #ff7070;
 }
 
-/* Body: the dockviewers grid holding the chart and DAG tiles. `--dv-*` are the library's theme
+/* Body: the tilers grid holding the chart and DAG tiles. `--dv-*` are the library's theme
    hooks; the content pad is zeroed so the chart still runs edge to edge inside its tile. */
 .dock-host {
   --dv-fg: #d0d4dc;

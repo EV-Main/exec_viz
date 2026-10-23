@@ -69,7 +69,7 @@ flowchart LR
 
 - `state` — every `/api/*` call and the shared signals (`FRAME`, `PLAYING`, `SPEED`,
   `SELECTED`, `WAITING`). Each frame that lands also moves the chart's replay cursor.
-- `views` — the status bar plus two `dockviewers` tiles (chart, DAG). Also the free-run
+- `views` — the status bar plus two `tilers` tiles (chart, DAG). Also the free-run
   poll loop and the two JS→Rust bridges (keys, chart clicks).
 - `dag` — the activations panel: one column per topo level, a per-node element grid heat-
   colored by running min/max, and an SVG overlay whose edge weights are the tick's

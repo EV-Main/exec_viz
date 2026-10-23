@@ -35,7 +35,6 @@ ahash = { version = "0.8", features = ["serde"] }
 axum = "0.8"
 # --- web (Dioxus/wasm) frontend. wasm-bindgen pinned in lockstep with wasm-bindgen-cli (flake) and v_utils. ---
 dioxus = { version = "0.7", features = ["web"] }
-dockviewers_dioxus = "0.2"
 exec_viz = { path = "exec_viz", version = "0.3.0", default-features = false }
 futures = "^0.3"
 getrandom = { version = "=0.3.4", features = ["wasm_js"] } # Named in `exec_viz_web`'s source: `dx` passes `--cfg getrandom_backend="wasm_js"` to every wasm unit, and the backend is a compile error without the matching feature. `ahash` (via `ustr`, so `v_utils`) is what puts getrandom on the wasm target, so the 0.3 line is the one to turn it on for.
@@ -45,6 +44,7 @@ js-sys = "0.3"
 rmp-serde = "1"
 serde = { version = "^1.0.229", features = ["derive"] }
 serde_json = "^1"
+tilers_dioxus = "0.2"
 tokio = { version = "^1", features = ["full"] }
 tower-http = { version = "0.7", features = ["fs", "set-header"] }
 # Published, not patched to a sibling path: the path only exists on one developer's disk, and a

@@ -2,9 +2,9 @@
 //! a moving replay cursor) and the DAG activations panel — the user can resize, tab and maximize.
 
 use dioxus::prelude::*;
-use dockviewers_dioxus::{Config, DockPanel, Group, GroupId, MinSize, PackedApi, PackedArea, PanelId};
 use exec_viz::api_types::TopoNode;
 use futures::StreamExt as _;
+use tilers_dioxus::{Config, DockPanel, Group, GroupId, MinSize, PackedApi, PackedArea, PanelId};
 use wasm_bindgen::{JsCast as _, closure::Closure};
 
 use crate::{dag, keyboard, state};

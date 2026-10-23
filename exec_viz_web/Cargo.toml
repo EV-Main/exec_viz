@@ -28,7 +28,6 @@ demo = ["exec_viz/tape"]
 [dependencies]
 ahash.workspace = true
 dioxus.workspace = true
-dockviewers_dioxus.workspace = true
 exec_viz.workspace = true
 futures.workspace = true
 getrandom.workspace = true
@@ -37,6 +36,7 @@ gloo-timers.workspace = true
 js-sys.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+tilers_dioxus.workspace = true
 v_utils = { workspace = true, features = ["lightweight_charts", "wasm"] }
 wasm-bindgen.workspace = true
 wasm-bindgen-futures.workspace = true
