@@ -4,12 +4,12 @@
 [<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs&style=flat-square" height="20">](https://docs.rs/exec_viz)
 ![Lines Of Code](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/valeratrades/b48e6f02c61942200e7d1e3eeabf9bcb/raw/exec_viz-loc.json)
 <br>
-[<img alt="ci errors" src="https://img.shields.io/github/actions/workflow/status/EV-Main/exec_viz/errors.yml?branch=main&style=for-the-badge&style=flat-square&label=errors&labelColor=420d09" height="20">](https://github.com/EV-Main/exec_viz/actions?query=branch%3Amain) <!--NB: Won't find it if repo is private-->
-[<img alt="ci warnings" src="https://img.shields.io/github/actions/workflow/status/EV-Main/exec_viz/warnings.yml?branch=main&style=for-the-badge&style=flat-square&label=warnings&labelColor=d16002" height="20">](https://github.com/EV-Main/exec_viz/actions?query=branch%3Amain) <!--NB: Won't find it if repo is private-->
+[<img alt="ci errors" src="https://img.shields.io/github/actions/workflow/status/EV-Quant/exec_viz/errors.yml?branch=main&style=for-the-badge&style=flat-square&label=errors&labelColor=420d09" height="20">](https://github.com/EV-Quant/exec_viz/actions?query=branch%3Amain) <!--NB: Won't find it if repo is private-->
+[<img alt="ci warnings" src="https://img.shields.io/github/actions/workflow/status/EV-Quant/exec_viz/warnings.yml?branch=main&style=for-the-badge&style=flat-square&label=warnings&labelColor=d16002" height="20">](https://github.com/EV-Quant/exec_viz/actions?query=branch%3Amain) <!--NB: Won't find it if repo is private-->
 
-🌐 **[Live demo](https://EV-Main.github.io/exec_viz/)** — no setup, runs in the browser. A recorded `scam_pump_liqs` day, scrubbable: `space` steps, `b` jumps to the next bar, `c` to the next classification, a click on the chart seeks to that time.
+🌐 **[Live demo](https://EV-Quant.github.io/exec_viz/)** — no setup, runs in the browser. A recorded `scam_pump_liqs` day, scrubbable: `space` steps, `b` jumps to the next bar, `c` to the next classification, a click on the chart seeks to that time.
 
-Tick-by-tick replay for a [`trading_data`](https://github.com/EV-Main/trading_data) computation DAG — one computation structure, several interpretations of it.
+Tick-by-tick replay for a [`trading_data`](https://github.com/EV-Quant/trading_data) computation DAG — one computation structure, several interpretations of it.
 
 Production evaluates the graph through `step`. Point `exec_viz` at the same tick chain and it runs under a recording `Observer` instead, so the browser can walk the run back: layers lighting up as they fire, element values and their local Jacobians drawn on the computation graph itself, next to a candle chart of the same day.
 
@@ -29,7 +29,7 @@ cargo add exec_viz
 The front-end is a separate wasm bundle, built once and pointed at by an env var:
 
 ```sh
-export EXEC_VIZ_WEB_DIR="$(nix run github:EV-Main/exec_viz)"  # prints where the bundle landed
+export EXEC_VIZ_WEB_DIR="$(nix run github:EV-Quant/exec_viz)"  # prints where the bundle landed
 ```
 
 `nix run .` builds `exec_viz_web` with a pinned `dioxus-cli`/`wasm-bindgen` pair and prints the bundle path — nothing else. Whoever wants a UI points `EXEC_VIZ_WEB_DIR` at it and starts their own binary; this repo has no business knowing their package names.
@@ -68,7 +68,7 @@ tokio::join!(viz.clone().serve_on(listener), async {
 
 #### The view
 
-Two [tilers](https://github.com/EV-Main/tilers) tiles you can resize, tab and maximize — a lightweight-charts candle pane with a moving replay cursor, and the DAG activations panel. Clicking the chart seeks the tape to that bar; `Alt+S` caches the arrangement per screen band.
+Two [tilers](https://github.com/EV-Quant/tilers) tiles you can resize, tab and maximize — a lightweight-charts candle pane with a moving replay cursor, and the DAG activations panel. Clicking the chart seeks the tape to that bar; `Alt+S` caches the arrangement per screen band.
 
 The DAG panel is DOM-inspector-style and present-moment only: one column per topo level, each node card rendering its element grid (shape from the node's `dims`), cells heat-colored by per-element running min/max. An SVG overlay draws element→element edges weighted by that tick's finite-difference Jacobian. A node that stayed quiet still shows its last value — `fired` is what says it is live this tick.
 

@@ -10,7 +10,7 @@ version = "0.3.0"
 edition = "2024"
 authors = ["Valeriy Sakharov <valeratrades@gmail.com>"]
 license = "BlueOak-1.0.0"
-repository = "https://github.com/EV-Main/exec_viz"
+repository = "https://github.com/EV-Quant/exec_viz"
 keywords = ["dag", "visualization", "replay", "trading", "debugging"]
 categories = ["visualization", "development-tools::debugging", "finance"]
 

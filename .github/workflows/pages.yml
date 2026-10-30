@@ -20,7 +20,7 @@ env:
   # The recorded spl run the demo scrubs. A release asset rather than a tracked file, so neither
   # this repo's history nor trading_data's carries the megabytes; re-record and re-upload under the
   # same tag to change what the demo shows.
-  TAPE: https://github.com/EV-invest/exec_viz/releases/download/demo-tape/demo.tape
+  TAPE: https://github.com/EV-Quant/exec_viz/releases/download/demo-tape/demo.tape
 
 jobs:
   build:
